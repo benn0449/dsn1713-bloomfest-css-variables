@@ -19,6 +19,27 @@
      colours first, then the -rgb versions, then fonts and sizes. */
 
 
+   --bf-black: #0a0a0a;
+   --bf-charcoal: #111111;
+   --bf-white: #ffffff;
+   --bf-pink: #ff3ea5;
+   --bf-pink-dark: #e6288f;
+   --bf-lime: #aaff00;
+   --bf-sky: #38d9f5;
+   --bf-orange: #ff7c2a;
+   --bf-orange-dark: #e8691a;
+   --bf-purple: #7c3aed;
+
+   --bf-pink-rgb: 255, 62, 165;
+   --bf-lime-rgb: 170, 255, 0;
+   --bf-sky-rgb: 56, 217, 245;
+
+   --bf-font-display: 'Bebas Neue', Impact, sans-serif;
+   --bf-font-body: 'Plus Jakarta Sans', sans-serif;
+   --bf-fs-hero: clamp(4rem, 10vw, 8rem);
+   --bf-space-section: 5rem;
+   --bf-radius: 4px;
+
 
   /* TASK 2: Bootstrap overrides
      Find Bootstrap's variables for the page background, text
@@ -26,7 +47,35 @@
      colour and link colour. Point each one at your variables.
      Remember: some colours also need their -rgb twin. */
 
+   /* Page background */
+   --bs-body-bg: var(--bf-black);
 
+   /* Body text colour */
+   --bs-body: var(--bf-white);
+
+   /* Body font */
+   --bs-body-font-family: var(--bf-font-body); /*idk if correct*/
+
+   /* Corner (border?) radius */
+   --bs-border-radius: var(--bf-radius);
+
+   /* Primary colour */
+   --bs-primary: var(--bf-pink);
+
+   /* Primary colour -rgb twin */
+   --bs-primary-rgb: var(--bf-pink-rgb);
+
+   /* Info colour */
+   --bs-info: var(--bf-sky);
+
+   /* Info colour - rgb twin */
+   --bs-info-rgb: var(--bf-sky-rgb);
+
+   /* Link colour */
+   --bs-link-color: var(--bf-lime);
+
+   /* Link colour - rgb twin */
+   --bs-link-color-rgb: var(--bf-lime-rgb);
 
 }
 
@@ -41,16 +90,17 @@ h1, h2, h3,
 .footer-logo,
 .form-heading,
 .blockquote {
-   font-family: ________________;
+   font-family: var(--bf-font-display);
 }
 
 .hero-title {
-   font-size: ________________;
+   font-size: var(--bf-fs-hero);
 }
 
 .section {
-   padding-top: ________________;
-   padding-bottom: ________________;
+   padding-top: var(--bf-space-section);
+;
+   padding-bottom: var(--bf-space-section);
 }
 
 
@@ -59,15 +109,15 @@ h1, h2, h3,
 
 .hero-dates,
 .section-label {
-   color: ________________;
+   color: var(--bf-lime);
 }
 
 .festival-quote::before {
-   color: ________________;
+   color: var(--bf-pink);
 }
 
 .info-text p:first-of-type::first-letter {
-   color: ________________;
+   color: var(--bf-orange);
 }
 
 
@@ -75,15 +125,15 @@ h1, h2, h3,
    Site header uses black, schedule section uses charcoal 
    and quote section uses purple. */
 
-.site-header {
+.site-header { /*use black colour*/
+   --bs-heading-color: nav(--bf-black);
+}
+
+.schedule-section { /*use charcoal*/
 
 }
 
-.schedule-section {
-
-}
-
-.quote-section {
+.quote-section { /*use purple*/
 
 }
 
@@ -104,6 +154,14 @@ h1, h2, h3,
    --bs- variables for this button. */
 
 .btn-primary {
+   --bs-btn-bg: var(--bf-pink);
+   --bs-btn-border-color: var(--bf-pink);
+
+   --bs-btn-hover-bg: var(--bf-pink-dark);
+   --bs-btn-hover-border-color: var(--bf-pink-dark);
+
+   --bs-btn-active-bg: var(--bf-pink-dark);
+   --bs-btn-active-border-color: var(--bf-pink-dark);
 
 }
 
@@ -112,6 +170,17 @@ h1, h2, h3,
    Same variables as Task 7, plus the text colour variables. */
 
 .btn-warning {
+   --bs-btn-bg: var(--bf-orange);
+   --bs-btn-color: var(--bf-white);
+   --bs-btn-border-color: var(--bf-orange);
+
+   --bs-btn-hover-bg: var(--bf-orange-dark);
+   --bs-btn-hover-color: var(--bf-white);
+   --bs-btn-hover-border-color: var(--bf-orange-dark);
+
+   --bs-btn-active-bg: var(--bf-orange-dark);
+   --bs-btn-active-color: var(--bf-white);
+   --bs-btn-active-border-color: var(--bf-orange-dark);
 
 }
 
@@ -120,6 +189,12 @@ h1, h2, h3,
    Find the card's --bs- variable for its background colour.
    Set it in all three rules. You will be targetting the --bs- 
    variable as the property and your --bf variable as the value. */
+
+   /* Cards also have their own set of variables. Inspect an artist card and find the .card variable that controls the background colour. You'll use that same variable in all three card rules. 
+
+   In .artist-card, set it to --bf-black. In .artist-card:hover, set it to --bf-charcoal so the card lightens when you hover over it. In .artist-card:has(.headliner-badge), set it to --bf-pink so only the headliner cards turn pink. Each rule changes the variable only for the cards it selects.
+
+   **Check:** headliner cards turn pink, and the other cards get lighter on hover. */ 
 
 .artist-card {
    /* Uses black variable */
